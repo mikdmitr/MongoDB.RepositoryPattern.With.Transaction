@@ -1,0 +1,57 @@
+version: '3.4'
+
+services:
+  client.workerservice.firstapproach:
+    image: ${DOCKER_REGISTRY-}clientworkerservicefirstapproach
+    build:
+      context: .
+      dockerfile: Client.WorkerService.FirstApproach/Dockerfile
+    depends_on:
+      - "mongo-rs0-1"
+
+  # MONGO 1
+  mongo-rs0-1:
+    image: "mongo-start1"
+    container_name: mongo1
+    build: ./MONGO1
+    #restart: always
+    ports:
+      - 27004:27017
+    volumes:
+      -  ./MONGO1/data:/data/db
+    depends_on:
+      - "mongo-rs0-2"
+      - "mongo-rs0-3"
+    #environment:
+    #  MONGO_INITDB_ROOT_USERNAME: root
+    #  MONGO_INITDB_ROOT_PASSWORD: example
+    
+  # MONGO 2
+  mongo-rs0-2:
+    image: "mongo"
+    container_name: mongo2
+    #restart: always
+    command: --replSet rs0 --oplogSize 128
+    ports:
+      - 27005:27017
+    volumes:
+      -  ./MONGO2/data:/data/db
+      
+  # MONGO 3
+  mongo-rs0-3:
+    image: "mongo"
+    container_name: mongo3
+    #restart: always
+    command: --replSet rs0 --oplogSize 128
+    ports:
+      - 27006:27017
+    volumes:
+      -  ./MONGO3/data:/data/db
+      
+  # setup
+  setup-rs:
+    image: "setup-rs2"
+    container_name: setup.cluster
+    build: ./setup
+    depends_on:
+      - "mongo-rs0-1"

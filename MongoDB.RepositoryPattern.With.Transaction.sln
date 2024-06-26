@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30517.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{8CD3BD78-F332-446C-A6B8-0EDF5A400AD7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.WorkerService.FirstApproach", "Client.WorkerService.FirstApproach\Client.WorkerService.FirstApproach.csproj", "{84BD15EC-46EA-4682-B83C-D7D3E1109D30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.WorkerService.SecondApproach", "Client.WorkerService.SecondApproach\Client.WorkerService.SecondApproach.csproj", "{4255CB21-4381-4947-969D-A17431653A42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.WorkerService.SecondApproach", "Client.WorkerService.SecondApproach\Client.WorkerService.SecondApproach.csproj", "{4255CB21-4381-4947-969D-A17431653A42}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7E7E90DF-E4BC-4F76-8CF8-DFA48DBAD853}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4255CB21-4381-4947-969D-A17431653A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4255CB21-4381-4947-969D-A17431653A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4255CB21-4381-4947-969D-A17431653A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E7E90DF-E4BC-4F76-8CF8-DFA48DBAD853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7E90DF-E4BC-4F76-8CF8-DFA48DBAD853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7E90DF-E4BC-4F76-8CF8-DFA48DBAD853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7E90DF-E4BC-4F76-8CF8-DFA48DBAD853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
